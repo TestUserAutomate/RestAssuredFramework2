@@ -1,5 +1,6 @@
 package Api;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +13,42 @@ import Base.BaseApi;
 import io.restassured.response.Response;
 
 public class DevQAApplication extends BaseApi {
+
 	@BeforeSuite
 	public void init() {
 		reportSetup("QA environment","Nithin Devarajan","API testing - DevQA application");
 		log.info("initialization of the  application executed");
 	}
 
-	@Test
+	@Test(dataProvider="PostData",enabled=true)
+	public void postTestData(int id, String employee_name,String employee_salary, int employee_age,String profile_image) {
+		log.info("Posting the request");
+		Response response = doPostRequest(id,employee_name,employee_salary,employee_age,profile_image);
+		response.prettyPrint();
+	}
+	
+	@Test(dataProvider="CustomerFeedDataProvider",enabled=false)
+	public void excelPostTest(String id, String employee_name,String employee_salary, String employee_age,String profile_image ) throws IOException {
+		log.info("Posting the request using excel");
+		Response response =doPostExcel(id, employee_name,employee_salary,employee_age,profile_image);	
+		response.prettyPrint();
+	}
+
+	/*@Test(enabled=false)
+	public void putTest() {
+		log.info("Updating according to the request");
+		Response response=doPutRequest("http://localhost:3000/data/14");
+		response.prettyPrint();
+	}*/
+	
+	@Test(enabled=true,dataProvider="DeleteData")
+	public void deleteTest(int id) {
+		log.info("Deleting according to the request");
+		Response response=doDeleteRequest(id);
+		response.prettyPrint();
+	}
+	
+	@Test(enabled=false)
 	public void test_001_emp_greater_4lakhs() {
 		test = extent.createTest("DevQA validation 4 lakhs : ", " Validating Employees greater than 4 lakhs");
 		Response response = doGetRequest("http://localhost:3000/data");
@@ -46,7 +76,7 @@ public class DevQAApplication extends BaseApi {
 		}
 		test.pass("Test Executed and results to be validated ");
 	}
-	@Test
+	@Test(enabled=false)
 	public void test_002_emp_greater_3lakhs() {
 		test = extent.createTest("DevQA validation 3 lakhs", " Validating Employees greater than 3 lakhs");
 
@@ -73,7 +103,7 @@ public class DevQAApplication extends BaseApi {
 			System.out.println(a);
 		}		test.pass("Test Executed and results to be validated ");
 
-	}@Test
+	}@Test(enabled=false)
 	public void test_002_emp_greater_2lakhs() {
 		test = extent.createTest("DevQA validation 2 lakhs", " Validating Employees greater than 2 lakhs salary");
 
@@ -102,7 +132,7 @@ public class DevQAApplication extends BaseApi {
 		test.pass("test executed data to be validated");
 	}
 	
-	 @Test (priority=1)	
+	 @Test (enabled=false,priority=1)	
 	 public void test_validation() {
 			test = extent.createTest("JsonPlaceholder validation -", " Validating the catchphase validation ");
 
@@ -122,14 +152,11 @@ public class DevQAApplication extends BaseApi {
 	    		 Constants.Constants.catchPhase=catchPhase.get(k);	
 	    		 test.info("Catchphase extracted"+catchPhase.get(k));
 	    	   }
-	       
-	       
-	       
 	       }
 	       test.pass("Catchphase  testcase passed");
 	      
 	    }
-	 @Test (priority=2)	
+	 @Test (enabled=false,priority=2)	
 	public void test2() {
 			test = extent.createTest("Validating constants setup", " getting the catchphase from the constants val ");
 
@@ -139,7 +166,7 @@ public class DevQAApplication extends BaseApi {
                    }
     
 	 
-	 @Test 
+	 @Test (enabled=false)
 		public void failed_validation() {
 				test = extent.createTest("Validating failed outcome", " validating Failed Scenarios");
 
