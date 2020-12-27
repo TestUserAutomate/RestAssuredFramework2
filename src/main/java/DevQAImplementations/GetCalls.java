@@ -1,41 +1,14 @@
-package Api;
+package DevQAImplementations;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import Base.BaseApi;
-
+import ProjectSpecifics.DevQAProjects;
 import io.restassured.response.Response;
 
-public class DevQAApplication extends BaseApi {
-
-	@BeforeSuite
-	public void init() {
-		reportSetup("QA environment","Nithin Devarajan","API testing - DevQA application");
-		log.info("initialization of the  application executed");
-	}
-
-	@Test(dataProvider="PostData",enabled=true)
-	public void postTestData(int id, String employee_name,String employee_salary, int employee_age,String profile_image) {
-		log.info("Posting the request");
-		Response response = doPostRequest(id,employee_name,employee_salary,employee_age,profile_image);
-		response.prettyPrint();
-	}
-	
-	@Test(dataProvider="CustomerFeedDataProvider",enabled=false)
-	public void excelPostTest(String id, String employee_name,String employee_salary, String employee_age,String profile_image ) throws IOException {
-		log.info("Posting the request using excel");
-		Response response =doPostExcel(id, employee_name,employee_salary,employee_age,profile_image);	
-		response.prettyPrint();
-	}
-
-	
-	
+public class GetCalls extends DevQAProjects {
 	
 	@Test(enabled=true)
 	public void test_001_emp_greater_4lakhs() {
@@ -65,7 +38,7 @@ public class DevQAApplication extends BaseApi {
 		}
 		test.pass("Test Executed and results to be validated ");
 	}
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void test_002_emp_greater_3lakhs() {
 		test = extent.createTest("DevQA validation 3 lakhs", " Validating Employees greater than 3 lakhs");
 
@@ -92,7 +65,7 @@ public class DevQAApplication extends BaseApi {
 			System.out.println(a);
 		}		test.pass("Test Executed and results to be validated ");
 
-	}@Test(enabled=false)
+	}@Test(enabled=true)
 	public void test_002_emp_greater_2lakhs() {
 		test = extent.createTest("DevQA validation 2 lakhs", " Validating Employees greater than 2 lakhs salary");
 
@@ -121,7 +94,7 @@ public class DevQAApplication extends BaseApi {
 		test.pass("test executed data to be validated");
 	}
 	
-	 @Test (enabled=false,priority=1)	
+	 @Test (enabled=true,priority=1)	
 	 public void test_validation() {
 			test = extent.createTest("JsonPlaceholder validation -", " Validating the catchphase validation ");
 
@@ -145,7 +118,7 @@ public class DevQAApplication extends BaseApi {
 	       test.pass("Catchphase  testcase passed");
 	      
 	    }
-	 @Test (enabled=false,priority=2)	
+	 @Test (enabled=true,priority=2)	
 	public void test2() {
 			test = extent.createTest("Validating constants setup", " getting the catchphase from the constants val ");
 
@@ -164,14 +137,5 @@ public class DevQAApplication extends BaseApi {
 	    
      
       	
-
-
-
-	@AfterSuite
-	public void teardown(){
-
-
-		extent.flush();
-	}
 
 }

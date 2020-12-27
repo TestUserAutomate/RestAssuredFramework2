@@ -47,21 +47,6 @@ public class BaseApi{
 	}
 	
 	public static Response doPostRequest(int id, String employee_name,String employee_salary, int employee_age,String profile_image) {
-		
-		/*Map<String, Object> jsonToPost=new HashMap<>();
-		jsonToPost.put("id", "26");
-		jsonToPost.put("employee_name", "Steven smith");
-		jsonToPost.put( "employee_salary", "500800");
-		jsonToPost.put("employee_age","41");
-		jsonToPost.put("profile_image", "");*/
-		
-	/*	POJOClass pojo=new POJOClass();
-		pojo.setId(30);
-		pojo.setEmployee_age(40);
-		pojo.setEmployee_name("Sachin");
-		pojo.setEmployee_salary("100000");
-		pojo.setProfile_image("");*/
-		
 		JSONObject json=new JSONObject();
 		json.put("id", id);
 		json.put("employee_name", employee_name);
@@ -73,6 +58,7 @@ public class BaseApi{
 				contentType(ContentType.JSON).
 		body(json).
 		when().post("http://localhost:3000/data").
+		
 		then().extract().response();
 	}
 	
@@ -118,7 +104,7 @@ public static Response doPostExcel(String id, String employee_name,String employ
 		
 		return RestAssured.given().
 				contentType(ContentType.JSON).
-		body(readExcelData("CustomerFeed")).
+		body(DataLibrary.readExcelData("CustomerFeed")).
 		when().post("http://localhost:3000/data").
 		then().extract().response();
 	}
@@ -160,14 +146,6 @@ public static Response doPostExcel(String id, String employee_name,String employ
 		return readExcelData;
 	}
 	
-	@DataProvider(name="PostData")
-	public Object[][] dataForPost() {
-		return new Object[][] {
-			{34,"Raul","100000",30,""},
-			{35,"Pepe","50000",31,""},
-			{36,"Ozil","90000",32,""}
-		};
-	}
 
 	
 	@DataProvider(name="DeleteData")

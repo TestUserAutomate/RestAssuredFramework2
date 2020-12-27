@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Api.DevQAApplication">
+      <class name="DevQAImplementations.DeleteCalls">
         <methods>
           <include name="teardown"/>
           <include name="init"/>
           <include name="deleteTest"/>
         </methods>
-      </class> <!-- Api.DevQAApplication -->
+      </class> <!-- DevQAImplementations.DeleteCalls -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
