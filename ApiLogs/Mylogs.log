@@ -1,3 +1,8 @@
-[INFO ] 2020-12-26 14:25:55.155 [main] BaseApi - Extent Reports configured
-[INFO ] 2020-12-26 14:25:55.360 [main] BaseApi - initialization of the  application executed
-[INFO ] 2020-12-26 14:25:59.607 [main] BaseApi - Deleting according to the request
+[INFO ] 2020-12-29 10:51:32.565 [main] BaseApi - Extent Reports configured
+[INFO ] 2020-12-29 10:51:32.696 [main] BaseApi - initialization of the  application executed
+[INFO ] 2020-12-29 10:51:33.400 [main] BaseApi - Posting the request using excel
+[INFO ] 2020-12-29 10:51:33.400 [main] BaseApi - 40
+[INFO ] 2020-12-29 10:51:34.303 [main] BaseApi - Posting the request using excel
+[INFO ] 2020-12-29 10:51:34.304 [main] BaseApi - 41
+[INFO ] 2020-12-29 10:51:34.314 [main] BaseApi - Posting the request using excel
+[INFO ] 2020-12-29 10:51:34.315 [main] BaseApi - 42

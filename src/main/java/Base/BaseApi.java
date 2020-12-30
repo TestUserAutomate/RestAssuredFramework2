@@ -74,8 +74,8 @@ public class BaseApi{
 		jsonToPut.put("profile_image", "");*/
 		
 		POJOClass pojo=new POJOClass();
-		pojo.setId(14);
-		pojo.setEmployee_age(30);
+		/*pojo.setId(14);
+		pojo.setEmployee_age(30);*/
 		pojo.setEmployee_name("ViratKohli");
 		pojo.setEmployee_salary("900000");
 		pojo.setProfile_image("");
@@ -110,7 +110,7 @@ public static Response doPostExcel(String id, String employee_name,String employ
 	}
 	
 	
-	public static Object[][] readExcelData(String excelfileName) throws IOException {
+/*	public static Object[][] readExcelData(String excelfileName) throws IOException {
 		XSSFWorkbook wbook = 
 				new XSSFWorkbook("./data/"+excelfileName+".xlsx");
 		String stringCellValue =null;
@@ -145,7 +145,7 @@ public static Response doPostExcel(String id, String employee_name,String employ
 		Object[][] readExcelData=readExcelData("CustomerFeed");
 		return readExcelData;
 	}
-	
+	*/
 
 	
 	@DataProvider(name="DeleteData")

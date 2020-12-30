@@ -10,7 +10,8 @@ public class DataLibrary {
 
 	public static Object[][] readExcelData(String excelfileName) throws IOException {
 		XSSFWorkbook wbook = 
-				new XSSFWorkbook("./data/"+excelfileName+".xlsx");
+				
+				new XSSFWorkbook("C:/Users/nithin.devarajan/Desktop/TestData/"+excelfileName+".xlsx");
 		XSSFSheet sheet = wbook.getSheetAt(0);
 		int rowCount = sheet.getLastRowNum();
 //		System.out.println("Row Count is: "+rowCount);

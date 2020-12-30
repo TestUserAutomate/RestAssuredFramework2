@@ -2,16 +2,10 @@ package Data;
 
 public class POJOClass {
 
-	int id;
-	String employee_name;
-	String employee_salary;
-	int employee_age;
-	String profile_image;
-	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getEmployee_name() {
@@ -26,10 +20,10 @@ public class POJOClass {
 	public void setEmployee_salary(String employee_salary) {
 		this.employee_salary = employee_salary;
 	}
-	public int getEmployee_age() {
+	public String getEmployee_age() {
 		return employee_age;
 	}
-	public void setEmployee_age(int employee_age) {
+	public void setEmployee_age(String employee_age) {
 		this.employee_age = employee_age;
 	}
 	public String getProfile_image() {
@@ -38,5 +32,12 @@ public class POJOClass {
 	public void setProfile_image(String profile_image) {
 		this.profile_image = profile_image;
 	}
+	String id;
+	String employee_name;
+	String employee_salary;
+	String employee_age;
+	String profile_image;
+	
 	
 }
+	

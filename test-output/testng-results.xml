@@ -1,25 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-26T14:25:55 IST" name="Default suite" finished-at="2020-12-26T14:26:02 IST" duration-ms="7163">
+  <suite started-at="2020-12-30T16:24:28 IST" name="Default suite" finished-at="2020-12-30T16:24:30 IST" duration-ms="1484">
     <groups>
     </groups>
-    <test started-at="2020-12-26T14:25:55 IST" name="Default test" finished-at="2020-12-26T14:26:02 IST" duration-ms="7163">
-      <class name="DevQAImplementations.DeleteCalls">
-        <test-method is-config="true" signature="init()[pri:0, instance:DevQAImplementations.DeleteCalls@11eadcba]" started-at="2020-12-26T14:25:55 IST" name="init" finished-at="2020-12-26T14:25:55 IST" duration-ms="269" status="PASS">
+    <test started-at="2020-12-30T16:24:28 IST" name="Default test" finished-at="2020-12-30T16:24:30 IST" duration-ms="1484">
+      <class name="test.TEst">
+        <test-method signature="circuitLocationTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TEst@378542de]" started-at="2020-12-30T16:24:30 IST" name="circuitLocationTest" data-provider="Temp" finished-at="2020-12-30T16:24:30 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:52)
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:148)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:797)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:788)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
+at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:1093)
+at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:397)
+at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:349)
+at Utils.DataLibrary.readExcelData(DataLibrary.java:25)
+at test.TEst.readCustomerFeed(TEst.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:79)
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:48)
+... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- init -->
-        <test-method signature="deleteTest()[pri:0, instance:DevQAImplementations.DeleteCalls@11eadcba]" started-at="2020-12-26T14:25:55 IST" name="deleteTest" finished-at="2020-12-26T14:26:02 IST" duration-ms="7112" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:DevQAImplementations.DeleteCalls@11eadcba]" started-at="2020-12-26T14:26:02 IST" name="teardown" finished-at="2020-12-26T14:26:02 IST" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- DevQAImplementations.DeleteCalls -->
+        </test-method> <!-- circuitLocationTest -->
+      </class> <!-- test.TEst -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

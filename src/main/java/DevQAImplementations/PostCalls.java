@@ -5,12 +5,7 @@ import org.testng.annotations.Test;
 
 import ProjectSpecifics.DevQAProjects;
 import io.restassured.response.Response;
-/*{
-	  "testCase": "Verify error message on empty userName",
-	  "username": "",
-	  "password": "password",
-	  "rememberMe": false
-	*/
+
 public class PostCalls extends DevQAProjects {
 	@DataProvider(name="PostData")
 	public Object[][] dataForPost() {
